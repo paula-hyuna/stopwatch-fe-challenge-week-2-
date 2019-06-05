@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>StopWatch</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+
+   <!-- Latest compiled and minified CSS
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+
+  </head>
+  <body>
+   <div class="container h-100" id="stopWatch"> 
+        <div class="row align-self-center text-center">
+            <div class="col-6 mx-auto">
+                <div class="jumbotron">
+                        <p id="timer"> 00:00:00 </p>  
+                        <button  id="startPause"></button> 
+                        <button  id="reset"></button>
+                </div>
+            </div>
+        </div>   
+   </div>
+
+  <script>
+  var running = 0;
+  var time = 0;
+  var startBtn = document.getElementById('startPause');
+  var resetBtn = document.getElementById('reset');
+  startBtn.innerHTML = 'Start';
+  resetBtn.innerHTML = 'Reset';
+
+
+startBtn.addEventListener('click', function () {
+   //console.log("before loop running val: ", running);
+   if (startBtn.innerHTML == "Start") {
+    
+        console.log("Reached condition");
+        startBtn.innerHTML = "Pause";
+        console.log(startBtn.innerHTML);
+    }
+    else{
+        running = 0;
+        startBtn.innerHTML = "Resume";
+    }
+})
+
+startBtn.addEventListener('click', function () {
+    running = 0;
+    time = 0;
+    document.getElementById('timer').innerHTML = "00:00:00";
+    document.getElementById('startPause').innerHTML = 'Start';
+})
+  
+  </script>
+  </body>
+</html>
